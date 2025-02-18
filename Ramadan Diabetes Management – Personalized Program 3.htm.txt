@@ -1,0 +1,1005 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>/******************************************************************************
+
+Welcome to GDB Online.
+  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
+  Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramadan Diabetes Management – Personalized Program</title>
+  <!-- Google Font: Roboto -->
+  <link href="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/css2.css" rel="stylesheet">
+  <style>
+    /* GENERAL STYLES (Blue-only Color Scheme) */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 0;
+      color: #003366;
+    }
+    /* HEADER */
+    header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    /* WIZARD STEP STYLES */
+    .wizard-step {
+      display: none;
+      animation: fadeIn 0.5s;
+      padding: 20px;
+      border-top: 4px solid #00509e;
+      margin-bottom: 20px;
+    }
+    .wizard-step.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* FORM FIELDS */
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    fieldset legend {
+      font-weight: 500;
+      padding: 0 10px;
+      font-size: 18px;
+      color: #003366;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    /* NAVIGATION BUTTONS */
+    .navigation {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .navigation button {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+    /* RESULTS AREA */
+    .result {
+      border: 1px solid #99ccff;
+      padding: 15px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      margin-top: 20px;
+    }
+    /* Color-coded alerts */
+    .result.low { background-color: #d4edda; color: #155724; }      /* green for low risk */
+    .result.moderate { background-color: #fff3cd; color: #856404; } /* yellow for moderate risk */
+    .result.high { background-color: #f8d7da; color: #721c24; }       /* red for high risk */
+    /* BILINGUAL LAYOUT */
+    .bilingual {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .bilingual > div {
+      flex: 1;
+      min-width: 300px;
+    }
+    /* FOOTER */
+    footer {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    /* MEDICATION BOX IMAGE PLACEHOLDER */
+    .med-box {
+      display: block;
+      margin: 10px 0;
+      max-width: 150px;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  </style>
+
+
+  <!-- HEADER (No Logo) -->
+  <header>
+    <h1>Ramadan Diabetes Management – Personalized Program</h1>
+  </header>
+
+  <div class="container">
+    <!-- STEP 0: Language Selection & Welcome -->
+    <div id="wizard-step-0" class="wizard-step active">
+      <div style="text-align: center;">
+        <h2>Welcome, Ramadan Mubarak!</h2>
+        <p>Please select your language to continue.</p>
+        <p>
+          <button onclick="switchLanguage('en');">English</button>
+          <button onclick="switchLanguage('ar');">العربية</button>
+        </p>
+        <div class="navigation">
+          <button onclick="nextStep(1)">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Risk Assessment & Diabetic History -->
+    <div id="wizard-step-1" class="wizard-step">
+      <div class="bilingual">
+        <!-- ENGLISH -->
+        <div class="content-en">
+          <h2>Step 1: Risk Assessment &amp; Diabetic History</h2>
+          <p>Please answer the following questions regarding your 
+diabetes and overall health. Your responses will be used to tailor 
+alerts, recommendations, and dosage adjustments during Ramadan.</p>
+          <form id="assessmentForm">
+            <fieldset>
+              <legend>Health Information</legend>
+              <label for="patientAge">Age:</label>
+              <input type="number" id="patientAge" name="patientAge" required="">
+              <label for="patientWeight">Weight (kg):</label>
+              <input type="number" id="patientWeight" name="patientWeight" required="">
+              <label for="diabetesType">Type of Diabetes:</label>
+              <select id="diabetesType" name="diabetesType" required="">
+                <option value="Type 1 Diabetes" selected="selected">Type 1 Diabetes</option>
+                <option value="Type 2 Diabetes">Type 2 Diabetes</option>
+              </select>
+              <label for="durationDiabetes">Duration of Diabetes (years):</label>
+              <input type="number" id="durationDiabetes" name="durationDiabetes" required="">
+              <label for="hypoEpisodes">Hypoglycemic Episodes (past month):</label>
+              <select id="hypoEpisodes" name="hypoEpisodes">
+                <option value="0" selected="selected">0</option>
+                <option value="1-2">1-2 episodes</option>
+                <option value="&gt;3">More than 3 episodes</option>
+              </select>
+              <label for="hbA1c">HbA1c (%):</label>
+              <input type="number" id="hbA1c" name="hbA1c" step="0.1" required="">
+              <label>History of DKA/HHS in the past 3 months?</label>
+              <input type="radio" id="dkaYes" name="dkaHistory" value="yes" required="">
+              <label for="dkaYes">Yes</label>
+              <input type="radio" id="dkaNo" name="dkaHistory" value="no">
+              <label for="dkaNo">No</label>
+              <br>
+              <label>Did you fast Ramadan last year?</label>
+              <input type="radio" id="fastedYes" name="fastedLastRamadan" value="yes" required="">
+              <label for="fastedYes">Yes</label>
+              <input type="radio" id="fastedNo" name="fastedLastRamadan" value="no">
+              <label for="fastedNo">No</label>
+              <label>Significant kidney disease?</label>
+              <input type="radio" id="kidneyYes" name="kidneyDisease" value="yes" required="">
+              <label for="kidneyYes">Yes</label>
+              <input type="radio" id="kidneyNo" name="kidneyDisease" value="no">
+              <label for="kidneyNo">No</label>
+              <label>Significant cardiovascular disease?</label>
+              <input type="radio" id="cvYes" name="cvDisease" value="yes" required="">
+              <label for="cvYes">Yes</label>
+              <input type="radio" id="cvNo" name="cvDisease" value="no">
+              <label for="cvNo">No</label>
+            </fieldset>
+          </form>
+        </div>
+        <!-- ARABIC -->
+        <div class="content-ar" style="display:none;">
+          <h2>الخطوة 1: تقييم المخاطر وتاريخ السكري</h2>
+          <p>يرجى الإجابة على الأسئلة التالية بخصوص مرض السكري وصحتك 
+العامة. ستُستخدم إجاباتك لتخصيص التنبيهات والتوصيات وتعديل الجرعات خلال 
+رمضان.</p>
+          <form id="assessmentForm_ar">
+            <fieldset>
+              <legend>المعلومات الصحية</legend>
+              <label for="patientAge_ar">العمر:</label>
+              <input type="number" id="patientAge_ar" name="patientAge_ar" required="">
+              <label for="patientWeight_ar">الوزن (كجم):</label>
+              <input type="number" id="patientWeight_ar" name="patientWeight_ar" required="">
+              <label for="diabetesType_ar">نوع السكري:</label>
+              <select id="diabetesType_ar" name="diabetesType_ar" required="">
+                <option value="Type 1 Diabetes" selected="selected">النوع ١</option>
+                <option value="Type 2 Diabetes">النوع ٢</option>
+              </select>
+              <label for="durationDiabetes_ar">مدة الإصابة بالسكري (بالسنوات):</label>
+              <input type="number" id="durationDiabetes_ar" name="durationDiabetes_ar" required="">
+              <label for="hypoEpisodes_ar">نوبات انخفاض السكر (الشهر الماضي):</label>
+              <select id="hypoEpisodes_ar" name="hypoEpisodes_ar">
+                <option value="0" selected="selected">0</option>
+                <option value="1-2">1-2 نوبات</option>
+                <option value="&gt;3">أكثر من 3 نوبات</option>
+              </select>
+              <label for="hbA1c_ar">HbA1c (%):</label>
+              <input type="number" id="hbA1c_ar" name="hbA1c_ar" step="0.1" required="">
+              <label>هل لديك تاريخ من الحماض/الحالة الفرط أسمولارية خلال الثلاثة أشهر الماضية؟</label>
+              <input type="radio" id="dkaYes_ar" name="dkaHistory_ar" value="yes" required="">
+              <label for="dkaYes_ar">نعم</label>
+              <input type="radio" id="dkaNo_ar" name="dkaHistory_ar" value="no">
+              <label for="dkaNo_ar">لا</label>
+              <br>
+              <label>هل صمت رمضان الماضي؟</label>
+              <input type="radio" id="fastedYes_ar" name="fastedLastRamadan_ar" value="yes" required="">
+              <label for="fastedYes_ar">نعم</label>
+              <input type="radio" id="fastedNo_ar" name="fastedLastRamadan_ar" value="no">
+              <label for="fastedNo_ar">لا</label>
+              <label>هل تعاني من أمراض الكلى المهمة؟</label>
+              <input type="radio" id="kidneyYes_ar" name="kidneyDisease_ar" value="yes" required="">
+              <label for="kidneyYes_ar">نعم</label>
+              <input type="radio" id="kidneyNo_ar" name="kidneyDisease_ar" value="no">
+              <label for="kidneyNo_ar">لا</label>
+              <label>هل تعاني من أمراض القلب والأوعية الدموية المهمة؟</label>
+              <input type="radio" id="cvYes_ar" name="cvDisease_ar" value="yes" required="">
+              <label for="cvYes_ar">نعم</label>
+              <input type="radio" id="cvNo_ar" name="cvDisease_ar" value="no">
+              <label for="cvNo_ar">لا</label>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="navigation">
+        <button onclick="previousStep(0)">← Previous</button>
+        <button onclick="nextStep(2)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Insulin and Incretin Details -->
+    <div id="wizard-step-2" class="wizard-step">
+      <div class="bilingual">
+        <!-- ENGLISH -->
+        <div class="content-en">
+          <h2>Step 2: Insulin and Incretin Details</h2>
+          <p>Please provide details for your insulin and weekly incretin (GLP‑1 receptor agonist) medications.</p>
+          <form id="insulinForm">
+            <fieldset>
+              <legend>Basal Insulin (Long‑Acting)</legend>
+              <label for="basalInsulin">Select Basal Insulin:</label>
+              <select id="basalInsulin" name="basalInsulin">
+                <option value="None" selected="selected">None</option>
+                <option value="Lantus (Glargine)">Lantus (Glargine)</option>
+                <option value="Toujeo (Glargine 300)">Toujeo (Glargine 300)</option>
+                <option value="Levemir (Detemir)">Levemir (Detemir)</option>
+                <option value="Tresiba (Degludec)">Tresiba (Degludec)</option>
+                <option value="Novolin N (NPH)">Novolin N (NPH)</option>
+              </select>
+              <label for="basalDose">Dose (units):</label>
+              <input type="number" id="basalDose" name="basalDose" min="0">
+              <label for="basalFrequency">Times per Day:</label>
+              <input type="number" id="basalFrequency" name="basalFrequency" min="0">
+            </fieldset>
+            <fieldset>
+              <legend>Prandial Insulin (Rapid‑Acting)</legend>
+              <label for="prandialInsulin">Select Prandial Insulin:</label>
+              <select id="prandialInsulin" name="prandialInsulin">
+                <option value="None" selected="selected">None</option>
+                <option value="NovoRapid (Aspart)">NovoRapid (Aspart)</option>
+                <option value="Humalog (Lispro)">Humalog (Lispro)</option>
+                <option value="Apidra (Rapid-Acting)">Apidra (Rapid-Acting)</option>
+                <option value="Regular (Human Insulin)">Regular (Human Insulin)</option>
+                <option value="Mixtard 30/70">Mixtard 30/70</option>
+              </select>
+              <label for="prandialDose">Dose (units):</label>
+              <input type="number" id="prandialDose" name="prandialDose" min="0">
+              <label for="prandialFrequency">Times per Day:</label>
+              <input type="number" id="prandialFrequency" name="prandialFrequency" min="0">
+            </fieldset>
+            <fieldset>
+              <legend>Incretin Agents (Weekly)</legend>
+              <label for="incretin">Select Incretin Agent:</label>
+              <select id="incretin" name="incretin">
+                <option value="None" selected="selected">None</option>
+                <option value="Trulicity">Trulicity</option>
+                <option value="Ozempic">Ozempic</option>
+                <option value="Saxenda">Saxenda</option>
+              </select>
+              <label for="incretinDose">Dose (mg or appropriate unit):</label>
+              <input type="number" id="incretinDose" name="incretinDose" min="0">
+              <label for="incretinFrequency">Frequency (per week):</label>
+              <input type="number" id="incretinFrequency" name="incretinFrequency" min="0">
+            </fieldset>
+          </form>
+        </div>
+        <!-- ARABIC -->
+        <div class="content-ar" style="display:none;">
+          <h2>الخطوة 2: تفاصيل الإنسولين والأدوية المحفزة لـ GLP‑1</h2>
+          <p>يرجى إدخال تفاصيل الإنسولين والأدوية المحفزة لـ GLP‑1 (التي تُؤخذ أسبوعياً):</p>
+          <form id="insulinForm_ar">
+            <fieldset>
+              <legend>الإنسولين الأساسي (طويل المفعول)</legend>
+              <label for="basalInsulin_ar">اختر الإنسولين الأساسي:</label>
+              <select id="basalInsulin_ar" name="basalInsulin_ar">
+                <option value="None" selected="selected">لا يوجد</option>
+                <option value="Lantus (Glargine)">Lantus (Glargine)</option>
+                <option value="Toujeo (Glargine 300)">Toujeo (Glargine 300)</option>
+                <option value="Levemir (Detemir)">Levemir (Detemir)</option>
+                <option value="Tresiba (Degludec)">Tresiba (Degludec)</option>
+                <option value="Novolin N (NPH)">Novolin N (NPH)</option>
+              </select>
+              <label for="basalDose_ar">الجرعة (وحدات):</label>
+              <input type="number" id="basalDose_ar" name="basalDose_ar" min="0">
+              <label for="basalFrequency_ar">عدد الجرعات في اليوم:</label>
+              <input type="number" id="basalFrequency_ar" name="basalFrequency_ar" min="0">
+            </fieldset>
+            <fieldset>
+              <legend>الإنسولين قصير المفعول</legend>
+              <label for="prandialInsulin_ar">اختر الإنسولين قصير المفعول:</label>
+              <select id="prandialInsulin_ar" name="prandialInsulin_ar">
+                <option value="None" selected="selected">لا يوجد</option>
+                <option value="NovoRapid (Aspart)">NovoRapid (Aspart)</option>
+                <option value="Humalog (Lispro)">Humalog (Lispro)</option>
+                <option value="Apidra (Rapid-Acting)">Apidra (Rapid-Acting)</option>
+                <option value="Regular (Human Insulin)">Regular (Human Insulin)</option>
+                <option value="Mixtard 30/70">Mixtard 30/70</option>
+              </select>
+              <label for="prandialDose_ar">الجرعة (وحدات):</label>
+              <input type="number" id="prandialDose_ar" name="prandialDose_ar" min="0">
+              <label for="prandialFrequency_ar">عدد الجرعات في اليوم:</label>
+              <input type="number" id="prandialFrequency_ar" name="prandialFrequency_ar" min="0">
+            </fieldset>
+            <fieldset>
+              <legend>الأدوية المحفزة لـ GLP‑1 (أسبوعياً)</legend>
+              <label for="incretin_ar">اختر الدواء المحفز لـ GLP‑1:</label>
+              <select id="incretin_ar" name="incretin_ar">
+                <option value="None" selected="selected">لا يوجد</option>
+                <option value="Trulicity">Trulicity</option>
+                <option value="Ozempic">Ozempic</option>
+                <option value="Saxenda">Saxenda</option>
+              </select>
+              <label for="incretinDose_ar">الجرعة (ملغ أو الوحدة المناسبة):</label>
+              <input type="number" id="incretinDose_ar" name="incretinDose_ar" min="0">
+              <label for="incretinFrequency_ar">عدد الجرعات في الأسبوع:</label>
+              <input type="number" id="incretinFrequency_ar" name="incretinFrequency_ar" min="0">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="navigation">
+        <button onclick="previousStep(1)">← Previous</button>
+        <button onclick="nextStep(3)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Oral Medication Details -->
+    <div id="wizard-step-3" class="wizard-step">
+      <div class="bilingual">
+        <!-- ENGLISH -->
+        <div class="content-en">
+          <h2>Step 3: Oral Medication Details</h2>
+          <p>Please select the trade name for each oral medication you 
+use. The options include familiar brand names in both English and 
+Arabic.</p>
+          <form id="medicationForm">
+            <!-- Medication 1 -->
+            <fieldset>
+              <legend>Medication 1</legend>
+              <label for="med1Select">Select Medication:</label>
+              <select id="med1Select" name="med1Select" onchange="showMedImage(this, 'med1Img')">
+                <option value="None" selected="selected">None / لا يوجد</option>
+                <option value="Glucophage (Metformin)">Glucophage (Metformin) / غلوكوفاج (ميتفورمين)</option>
+                <option value="Glucophage XR (Metformin XR)">Glucophage XR (Metformin XR) / غلوكوفاج إكس آر (ميتفورمين ممتد)</option>
+                <option value="Diamicron MR">Diamicron MR / دياميكـرون إم آر</option>
+                <option value="Amayl (Glimepiride)">Amayl (Glimepiride) / أميـيل (جليميبيريد)</option>
+                <option value="Doanil (Glibenclamide)">Doanil (Glibenclamide) / داونيل (غليبينكلاميد)</option>
+                <option value="Trajenta (Linagliptin)">Trajenta (Linagliptin) / تراجينتا (ليناجليبتين)</option>
+                <option value="Januvia (Sitagliptin)">Januvia (Sitagliptin) / جانوفيا (سيتاجليبتين)</option>
+                <option value="Saxagliptin">Saxagliptin / ساكساجليبتين</option>
+                <option value="Gulvus (Repaglinide)">Gulvus (Repaglinide) / جولفوس (ريباجلينيد)</option>
+                <option value="Jardiance (Empagliflozin)">Jardiance (Empagliflozin) / جاردينس (إمباجليفلوزين)</option>
+                <option value="Dapagliflozin">Dapagliflozin / داباجليفلوزين</option>
+                <option value="Actus (Actos)">Actus (Actos) / أكتوس (بايوجليتازون)</option>
+              </select>
+              <img id="med1Img" class="med-box" src="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/150" alt="Medication Box" style="display:none;">
+              <label for="med1Dose">Dose (mg):</label>
+              <input type="number" id="med1Dose" name="med1Dose" min="0">
+              <label for="med1Frequency">Times per Day:</label>
+              <input type="number" id="med1Frequency" name="med1Frequency" min="0">
+            </fieldset>
+            <!-- Medication 2 -->
+            <fieldset>
+              <legend>Medication 2</legend>
+              <label for="med2Select">Select Medication:</label>
+              <select id="med2Select" name="med2Select" onchange="showMedImage(this, 'med2Img')">
+                <option value="None" selected="selected">None / لا يوجد</option>
+                <option value="Glucophage (Metformin)">Glucophage (Metformin) / غلوكوفاج (ميتفورمين)</option>
+                <option value="Glucophage XR (Metformin XR)">Glucophage XR (Metformin XR) / غلوكوفاج إكس آر (ميتفورمين ممتد)</option>
+                <option value="Diamicron MR">Diamicron MR / دياميكـرون إم آر</option>
+                <option value="Amayl (Glimepiride)">Amayl (Glimepiride) / أميـيل (جليميبيريد)</option>
+                <option value="Doanil (Glibenclamide)">Doanil (Glibenclamide) / داونيل (غليبينكلاميد)</option>
+                <option value="Trajenta (Linagliptin)">Trajenta (Linagliptin) / تراجينتا (ليناجليبتين)</option>
+                <option value="Januvia (Sitagliptin)">Januvia (Sitagliptin) / جانوفيا (سيتاجليبتين)</option>
+                <option value="Saxagliptin">Saxagliptin / ساكساجليبتين</option>
+                <option value="Gulvus (Repaglinide)">Gulvus (Repaglinide) / جولفوس (ريباجلينيد)</option>
+                <option value="Jardiance (Empagliflozin)">Jardiance (Empagliflozin) / جاردينس (إمباجليفلوزين)</option>
+                <option value="Dapagliflozin">Dapagliflozin / داباجليفلوزين</option>
+                <option value="Actus (Actos)">Actus (Actos) / أكتوس (بايوجليتازون)</option>
+              </select>
+              <img id="med2Img" class="med-box" src="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/150" alt="Medication Box" style="display:none;">
+              <label for="med2Dose">Dose (mg):</label>
+              <input type="number" id="med2Dose" name="med2Dose" min="0">
+              <label for="med2Frequency">Times per Day:</label>
+              <input type="number" id="med2Frequency" name="med2Frequency" min="0">
+            </fieldset>
+            <!-- Medication 3 -->
+            <fieldset>
+              <legend>Medication 3</legend>
+              <label for="med3Select">Select Medication:</label>
+              <select id="med3Select" name="med3Select" onchange="showMedImage(this, 'med3Img')">
+                <option value="None" selected="selected">None / لا يوجد</option>
+                <option value="Glucophage (Metformin)">Glucophage (Metformin) / غلوكوفاج (ميتفورمين)</option>
+                <option value="Glucophage XR (Metformin XR)">Glucophage XR (Metformin XR) / غلوكوفاج إكس آر (ميتفورمين ممتد)</option>
+                <option value="Diamicron MR">Diamicron MR / دياميكـرون إم آر</option>
+                <option value="Amayl (Glimepiride)">Amayl (Glimepiride) / أميـيل (جليميبيريد)</option>
+                <option value="Doanil (Glibenclamide)">Doanil (Glibenclamide) / داونيل (غليبينكلاميد)</option>
+                <option value="Trajenta (Linagliptin)">Trajenta (Linagliptin) / تراجينتا (ليناجليبتين)</option>
+                <option value="Januvia (Sitagliptin)">Januvia (Sitagliptin) / جانوفيا (سيتاجليبتين)</option>
+                <option value="Saxagliptin">Saxagliptin / ساكساجليبتين</option>
+                <option value="Gulvus (Repaglinide)">Gulvus (Repaglinide) / جولفوس (ريباجلينيد)</option>
+                <option value="Jardiance (Empagliflozin)">Jardiance (Empagliflozin) / جاردينس (إمباجليفلوزين)</option>
+                <option value="Dapagliflozin">Dapagliflozin / داباجليفلوزين</option>
+                <option value="Actus (Actos)">Actus (Actos) / أكتوس (بايوجليتازون)</option>
+              </select>
+              <img id="med3Img" class="med-box" src="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/150" alt="Medication Box" style="display:none;">
+              <label for="med3Dose">Dose (mg):</label>
+              <input type="number" id="med3Dose" name="med3Dose" min="0">
+              <label for="med3Frequency">Times per Day:</label>
+              <input type="number" id="med3Frequency" name="med3Frequency" min="0">
+            </fieldset>
+          </form>
+        </div>
+        <!-- ARABIC -->
+        <div class="content-ar" style="display:none;">
+          <h2>الخطوة 3: تفاصيل الأدوية الفموية</h2>
+          <p>يرجى اختيار الاسم التجاري لكل دواء تستخدمه. الخيارات تشمل أسماء مألوفة بالإنجليزية والعربية.</p>
+          <form id="medicationForm_ar">
+            <!-- الدواء 1 -->
+            <fieldset>
+              <legend>الدواء 1</legend>
+              <label for="med1Select_ar">اختر الدواء:</label>
+              <select id="med1Select_ar" name="med1Select_ar" onchange="showMedImage(this, 'med1Img_ar')">
+                <option value="None" selected="selected">لا يوجد</option>
+                <option value="Glucophage (Metformin)">Glucophage (ميتفورمين)</option>
+                <option value="Glucophage XR (Metformin XR)">Glucophage XR (ميتفورمين ممتد)</option>
+                <option value="Diamicron MR">Diamicron MR (دياميكـرون إم آر)</option>
+                <option value="Amayl (Glimepiride)">Amayl (جليميبيريد)</option>
+                <option value="Doanil (Glibenclamide)">Doanil (غليبينكلاميد)</option>
+                <option value="Trajenta (Linagliptin)">Trajenta (ليناجليبتين)</option>
+                <option value="Januvia (Sitagliptin)">Januvia (سيتاجليبتين)</option>
+                <option value="Saxagliptin">Saxagliptin (ساكساجليبتين)</option>
+                <option value="Gulvus (Repaglinide)">Gulvus (ريباجلينيد)</option>
+                <option value="Jardiance (Empagliflozin)">Jardiance (إمباجليفلوزين)</option>
+                <option value="Dapagliflozin">Dapagliflozin (داباجليفلوزين)</option>
+                <option value="Actus (Actos)">Actus (أكتوس)</option>
+              </select>
+              <img id="med1Img_ar" class="med-box" src="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/150_002" alt="صندوق الدواء" style="display:none;">
+              <label for="med1Dose_ar">الجرعة (ملغ):</label>
+              <input type="number" id="med1Dose_ar" name="med1Dose_ar" min="0">
+              <label for="med1Frequency_ar">عدد المرات في اليوم:</label>
+              <input type="number" id="med1Frequency_ar" name="med1Frequency_ar" min="0">
+            </fieldset>
+            <!-- الدواء 2 -->
+            <fieldset>
+              <legend>الدواء 2</legend>
+              <label for="med2Select_ar">اختر الدواء:</label>
+              <select id="med2Select_ar" name="med2Select_ar" onchange="showMedImage(this, 'med2Img_ar')">
+                <option value="None" selected="selected">لا يوجد</option>
+                <option value="Glucophage (Metformin)">Glucophage (ميتفورمين)</option>
+                <option value="Glucophage XR (Metformin XR)">Glucophage XR (ميتفورمين ممتد)</option>
+                <option value="Diamicron MR">Diamicron MR (دياميكـرون إم آر)</option>
+                <option value="Amayl (Glimepiride)">Amayl (جليميبيريد)</option>
+                <option value="Doanil (Glibenclamide)">Doanil (غليبينكلاميد)</option>
+                <option value="Trajenta (Linagliptin)">Trajenta (ليناجليبتين)</option>
+                <option value="Januvia (Sitagliptin)">Januvia (سيتاجليبتين)</option>
+                <option value="Saxagliptin">Saxagliptin (ساكساجليبتين)</option>
+                <option value="Gulvus (Repaglinide)">Gulvus (ريباجلينيد)</option>
+                <option value="Jardiance (Empagliflozin)">Jardiance (إمباجليفلوزين)</option>
+                <option value="Dapagliflozin">Dapagliflozin (داباجليفلوزين)</option>
+                <option value="Actus (Actos)">Actus (أكتوس)</option>
+              </select>
+              <img id="med2Img_ar" class="med-box" src="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/150_002" alt="صندوق الدواء" style="display:none;">
+              <label for="med2Dose_ar">الجرعة (ملغ):</label>
+              <input type="number" id="med2Dose_ar" name="med2Dose_ar" min="0">
+              <label for="med2Frequency_ar">عدد المرات في اليوم:</label>
+              <input type="number" id="med2Frequency_ar" name="med2Frequency_ar" min="0">
+            </fieldset>
+            <!-- الدواء 3 -->
+            <fieldset>
+              <legend>الدواء 3</legend>
+              <label for="med3Select_ar">اختر الدواء:</label>
+              <select id="med3Select_ar" name="med3Select_ar" onchange="showMedImage(this, 'med3Img_ar')">
+                <option value="None" selected="selected">لا يوجد</option>
+                <option value="Glucophage (Metformin)">Glucophage (ميتفورمين)</option>
+                <option value="Glucophage XR (Metformin XR)">Glucophage XR (ميتفورمين ممتد)</option>
+                <option value="Diamicron MR">Diamicron MR (دياميكـرون إم آر)</option>
+                <option value="Amayl (Glimepiride)">Amayl (جليميبيريد)</option>
+                <option value="Doanil (Glibenclamide)">Doanil (غليبينكلاميد)</option>
+                <option value="Trajenta (Linagliptin)">Trajenta (ليناجليبتين)</option>
+                <option value="Januvia (Sitagliptin)">Januvia (سيتاجليبتين)</option>
+                <option value="Saxagliptin">Saxagliptin (ساكساجليبتين)</option>
+                <option value="Gulvus (Repaglinide)">Gulvus (ريباجلينيد)</option>
+                <option value="Jardiance (Empagliflozin)">Jardiance (إمباجليفلوزين)</option>
+                <option value="Dapagliflozin">Dapagliflozin (داباجليفلوزين)</option>
+                <option value="Actus (Actos)">Actus (أكتوس)</option>
+              </select>
+              <img id="med3Img_ar" class="med-box" src="Ramadan%20Diabetes%20Management%20%E2%80%93%20Personalized%20Program_files/150_002" alt="صندوق الدواء" style="display:none;">
+              <label for="med3Dose_ar">الجرعة (ملغ):</label>
+              <input type="number" id="med3Dose_ar" name="med3Dose_ar" min="0">
+              <label for="med3Frequency_ar">عدد المرات في اليوم:</label>
+              <input type="number" id="med3Frequency_ar" name="med3Frequency_ar" min="0">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="navigation">
+        <button onclick="previousStep(2)">← Previous</button>
+        <button onclick="nextStep(4)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Personalized Recommendations & Professional Advice -->
+    <div id="wizard-step-4" class="wizard-step">
+      <div class="bilingual">
+        <!-- ENGLISH -->
+        <div class="content-en">
+          <h2>Step 4: Personalized Recommendations &amp; Professional Advice</h2>
+          <p>
+            Based on your inputs and the latest ADA 2025, DAR, and 
+IF‑DAR guidelines, our AI-powered analysis has integrated your risk 
+factors (including age and comorbidities) with your medication profile. 
+All of the following recommendations—including detailed whole-number 
+dose adjustments for insulin and oral hypoglycemic agents, medication 
+timing, diet suggestions, and precautions—are provided below:
+          </p>
+          <div id="individualizedResult" class="result"></div>
+          <p>Ramadan Kareem</p>
+        </div>
+        <!-- ARABIC -->
+        <div class="content-ar" style="display:none;">
+          <h2>الخطوة 4: التوصيات الشخصية والنصائح المهنية</h2>
+          <p>
+            استنادًا إلى بياناتك وآخر إرشادات ADA وDAR وIF‑DAR، قام 
+تحليلنا المدعوم بالذكاء الاصطناعي بدمج عوامل الخطر (بما في ذلك العمر 
+والمضاعفات) مع ملف أدويتك. فيما يلي التوصيات الرسمية، التي تشمل تعديلات 
+الجرعات (بالأعداد الصحيحة) للإنسولين والأدوية الفموية، وتوقيت تناولها، 
+وتوصيات غذائية، والاحتياطات، مُدرجة أدناه:
+          </p>
+          <div id="individualizedResult_ar" class="result"></div>
+          <p>رمضان كريم</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <button onclick="previousStep(3)">← Previous</button>
+        <button onclick="restartProgram()">Restart</button>
+        <button onclick="calculateRecommendations()">Calculate Recommendations</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Owner / المالك: د. علياء علي</p>
+    <p>We wish you good health and Ramadan Kareem!</p>
+    <p>نتمنى لك الصحة والعافية. رمضان كريم!</p>
+  </footer>
+
+  <script>
+    // Set the default language to English on load
+    window.onload = () => {
+      let currentLang = 'en';
+      window.currentLang = currentLang;
+
+      // Function to switch language (toggles between English and Arabic views)
+      window.switchLanguage = (lang) => {
+        currentLang = lang;
+        window.currentLang = currentLang;
+        document.querySelectorAll('.content-en').forEach(el => el.style.display = (lang === 'en') ? 'block' : 'none');
+        document.querySelectorAll('.content-ar').forEach(el => el.style.display = (lang === 'ar') ? 'block' : 'none');
+        document.body.style.direction = (lang === 'en') ? 'ltr' : 'rtl';
+      };
+
+      // Navigation functions for wizard steps
+      window.nextStep = (stepNumber) => {
+        document.querySelectorAll('.wizard-step').forEach(step => step.classList.remove('active'));
+        document.getElementById('wizard-step-' + stepNumber).classList.add('active');
+      };
+      window.previousStep = (stepNumber) => {
+        window.nextStep(stepNumber);
+      };
+
+      // Function to restart the program: reset all forms and clear recommendations
+      window.restartProgram = () => {
+        document.querySelectorAll("form").forEach(form => form.reset());
+        if(document.getElementById('individualizedResult'))
+          document.getElementById('individualizedResult').innerText = "";
+        if(document.getElementById('individualizedResult_ar'))
+          document.getElementById('individualizedResult_ar').innerText = "";
+        nextStep(0);
+      };
+
+      // Helper functions: get values with language-specific suffix
+      const getVal = (id) => {
+        const elem = document.getElementById(id + (currentLang === 'en' ? '' : '_ar'));
+        return elem ? elem.value : "";
+      };
+      const getNumber = (id) => {
+        const val = parseFloat(getVal(id));
+        return isNaN(val) ? 0 : val;
+      };
+
+      // Function to show a medication image based on the selected trade name
+      window.showMedImage = (selectElem, imgID) => {
+        const medImages = {
+          "Glucophage (Metformin)": "https://via.placeholder.com/150?text=Glucophage",
+          "Glucophage XR (Metformin XR)": "https://via.placeholder.com/150?text=Glucophage+XR",
+          "Diamicron MR": "https://via.placeholder.com/150?text=Diamicron+MR",
+          "Amayl (Glimepiride)": "https://via.placeholder.com/150?text=Amayl",
+          "Doanil (Glibenclamide)": "https://via.placeholder.com/150?text=Doanil",
+          "Trajenta (Linagliptin)": "https://via.placeholder.com/150?text=Trajenta",
+          "Januvia (Sitagliptin)": "https://via.placeholder.com/150?text=Januvia",
+          "Saxagliptin": "https://via.placeholder.com/150?text=Saxagliptin",
+          "Gulvus (Repaglinide)": "https://via.placeholder.com/150?text=Gulvus",
+          "Jardiance (Empagliflozin)": "https://via.placeholder.com/150?text=Jardiance",
+          "Dapagliflozin": "https://via.placeholder.com/150?text=Dapagliflozin",
+          "Actus (Actos)": "https://via.placeholder.com/150?text=Actus",
+          "Lantus (Glargine)": "https://via.placeholder.com/150?text=Lantus",
+          "Toujeo (Glargine 300)": "https://via.placeholder.com/150?text=Toujeo",
+          "Levemir (Detemir)": "https://via.placeholder.com/150?text=Levemir",
+          "Tresiba (Degludec)": "https://via.placeholder.com/150?text=Tresiba",
+          "Novolin N (NPH)": "https://via.placeholder.com/150?text=Novolin+N",
+          "NovoRapid (Aspart)": "https://via.placeholder.com/150?text=NovoRapid",
+          "Humalog (Lispro)": "https://via.placeholder.com/150?text=Humalog",
+          "Apidra (Rapid-Acting)": "https://via.placeholder.com/150?text=Apidra",
+          "Regular (Human Insulin)": "https://via.placeholder.com/150?text=Regular",
+          "Mixtard 30/70": "https://via.placeholder.com/150?text=Mixtard+30/70",
+          "Trulicity": "https://via.placeholder.com/150?text=Trulicity",
+          "Ozempic": "https://via.placeholder.com/150?text=Ozempic",
+          "Saxenda": "https://via.placeholder.com/150?text=Saxenda"
+        };
+        const selected = selectElem.value;
+        const imgElem = document.getElementById(imgID);
+        if (selected in medImages && selected !== "None") {
+          imgElem.src = medImages[selected];
+          imgElem.style.display = "block";
+        } else {
+          imgElem.style.display = "none";
+        }
+      };
+
+      // Calculate and display personalized recommendations based on user inputs
+      window.calculateRecommendations = () => {
+        let advice = "";
+        let alerts = "";
+        
+        // --- Collect Patient Data ---
+        const diabetesType = getVal('diabetesType');
+        const durationDiabetes = getNumber('durationDiabetes');
+        const hypoEpisodes = getVal('hypoEpisodes');
+        const hbA1c = getNumber('hbA1c');
+        const patientAge = getNumber('patientAge');
+        const patientWeight = getNumber('patientWeight');
+
+        const fastedLastRamadanVal = (() => {
+          const radio = document.querySelector(`input[name="fastedLastRamadan${currentLang === 'en' ? '' : '_ar'}"]:checked`);
+          return radio ? radio.value : "";
+        })();
+        const dkaHistory = (() => {
+          const radio = document.querySelector(`input[name="dkaHistory${currentLang === 'en' ? '' : '_ar'}"]:checked`);
+          return radio ? radio.value : "";
+        })();
+
+        // --- Risk Stratification ---
+        let riskCategory;
+        if (
+          diabetesType === "Type 1 Diabetes" ||
+          (diabetesType === "Type 2 Diabetes" && hbA1c > 9) ||
+          dkaHistory === "yes" ||
+          durationDiabetes >= 10 ||
+          hypoEpisodes === ">3"
+        ) {
+          riskCategory = "high";
+          advice += (currentLang === 'en')
+            ? "Risk Category: HIGH\n"
+            : "فئة الخطر: عالي\n";
+          alerts += (currentLang === 'en')
+            ? "Alert: Immediate consultation with your physician is recommended.\n\n"
+            : "تنبيه: يُنصح بمراجعة طبيبك فوراً.\n\n";
+        } else if ((hbA1c >= 7 && hbA1c <= 9) || hypoEpisodes === "1-2") {
+          riskCategory = "moderate";
+          advice += (currentLang === 'en')
+            ? "Risk Category: MODERATE\n"
+            : "فئة الخطر: متوسط\n";
+        } else {
+          riskCategory = "low";
+          advice += (currentLang === 'en')
+            ? "Risk Category: LOW\n"
+            : "فئة الخطر: منخفض\n";
+        }
+        
+        // --- Special Considerations for Age & Comorbidities ---
+        if (patientAge >= 65) {
+          advice += (currentLang === 'en')
+            ? "Note: Patients aged 65 or older require closer monitoring and may need further dose adjustments.\n"
+            : "تنبيه: المرضى بعمر 65 عامًا فأكثر يحتاجون إلى مراقبة دقيقة وقد يحتاجون إلى تعديل إضافي للجرعات.\n";
+        }
+        if (getVal('kidneyDisease') === "yes" || getVal('kidneyDisease_ar') === "yes") {
+          advice += (currentLang === 'en')
+            ? "Note: Kidney disease necessitates careful review and possible reduction of certain drug doses.\n"
+            : "تنبيه: أمراض الكلى تتطلب مراجعة دقيقة وقد تستدعي تقليل جرعات بعض الأدوية.\n";
+        }
+        if (getVal('cvDisease') === "yes" || getVal('cvDisease_ar') === "yes") {
+          advice += (currentLang === 'en')
+            ? "Note: Cardiovascular disease is a critical factor; ensure your regimen is optimized.\n"
+            : "تنبيه: أمراض القلب والأوعية الدموية عامل حاسم؛ تأكد من تحسين نظام أدويتك.\n";
+        }
+        
+        // --- AI-Powered Analysis Summary ---
+        advice = "AI Analysis Summary:\nBased on your risk factors (including age and comorbidities) and medication profile (aligned with ADA 2025 and IF‑DAR guidelines), please follow the recommendations below:\n\n" + advice;
+        
+        // --- Insulin Adjustments (Whole number adjustments) ---
+        // Basal Insulin
+        const basalInsulin = getVal('basalInsulin');
+        const basalDose = getNumber('basalDose');
+        if (basalInsulin !== "None" && basalDose > 0) {
+          const newBasalDose = Math.round(basalDose * 0.85);
+          advice += (currentLang === 'en')
+            ? `• Basal Insulin (${basalInsulin}): Reduce dose from ${basalDose} to ${newBasalDose} units. Take with Iftar.\n`
+            : `• الإنسولين الأساسي (${basalInsulin}): قلل الجرعة من ${basalDose} إلى ${newBasalDose} وحدة. يُؤخذ مع الإفطار.\n`;
+        }
+        // Prandial Insulin
+        const prandialInsulin = getVal('prandialInsulin');
+        const prandialDose = getNumber('prandialDose');
+        if (prandialInsulin !== "None" && prandialDose > 0) {
+          const newPrandialDose = Math.round(prandialDose * 0.75);
+          advice += (currentLang === 'en')
+            ? `• Prandial Insulin (${prandialInsulin}): Reduce Suhoor dose from ${prandialDose} to ${newPrandialDose} units. Take with Suhoor.\n`
+            : `• الإنسولين قصير المفعول (${prandialInsulin}): قلل جرعة السحور من ${prandialDose} إلى ${newPrandialDose} وحدة. يُؤخذ مع السحور.\n`;
+        }
+        // Incretin Agents (No adjustment, but timing note)
+        const incretin = getVal('incretin');
+        const incretinDose = getNumber('incretinDose');
+        if (incretin !== "None" && incretinDose > 0) {
+          advice += (currentLang === 'en')
+            ? `• Incretin Agent (${incretin}): Maintain your current dose of ${incretinDose}. These are administered weekly (preferably on a fixed day).\n`
+            : `• الدواء المحفز لـ GLP‑1 (${incretin}): احتفظ بالجرعة الحالية (${incretinDose}). تُؤخذ أسبوعياً (يفضل في يوم محدد).\n`;
+        }
+        
+        // --- Oral Hypoglycemic Agents Adjustments (Include timing instructions) ---
+        let adjustmentFactorSulfonylurea = (riskCategory === "high") ? 0.5 : (riskCategory === "moderate") ? 0.75 : 1.0;
+        
+        // Medication 1:
+        const med1 = getVal('med1Select');
+        const med1Dose = getNumber('med1Dose');
+        const med1Freq = getNumber('med1Frequency');
+        if (med1 !== "None" && med1Dose > 0 && med1Freq > 0) {
+          if (med1.includes("Glucophage")) {
+            advice += (currentLang === 'en')
+              ? `• Glucophage (Metformin): Continue your dose of ${med1Dose} mg, taken with Iftar.\n`
+              : `• غلوكوفاج (ميتفورمين): استمر بالجرعة الحالية (${med1Dose} ملغ)، يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Glucophage XR")) {
+            advice += (currentLang === 'en')
+              ? `• Glucophage XR (Metformin XR): Continue your dose of ${med1Dose} mg, taken with Iftar.\n`
+              : `• غلوكوفاج إكس آر (ميتفورمين ممتد): استمر بالجرعة الحالية (${med1Dose} ملغ)، يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Diamicron MR")) {
+            advice += (currentLang === 'en')
+              ? `• Diamicron MR: Continue your dose of ${med1Dose} mg, taken with Iftar.\n`
+              : `• دياميكـرون إم آر: استمر بالجرعة الحالية (${med1Dose} ملغ)، يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Amayl")) {
+            const newMed1Dose = Math.round(med1Dose * adjustmentFactorSulfonylurea);
+            advice += (currentLang === 'en')
+              ? `• Amayl (Glimepiride): Reduce dose from ${med1Dose} mg to ${newMed1Dose} mg; take with Iftar.\n`
+              : `• أميـيل (جليميبيريد): قلل الجرعة من ${med1Dose} ملغ إلى ${newMed1Dose} ملغ؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Doanil")) {
+            const newMed1Dose = Math.round(med1Dose * adjustmentFactorSulfonylurea);
+            advice += (currentLang === 'en')
+              ? `• Doanil (Glibenclamide): Reduce dose from ${med1Dose} mg to ${newMed1Dose} mg; take with Iftar.\n`
+              : `• داونيل (غليبينكلاميد): قلل الجرعة من ${med1Dose} ملغ إلى ${newMed1Dose} ملغ؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Trajenta")) {
+            advice += (currentLang === 'en')
+              ? `• Trajenta (Linagliptin): Maintain your current dose of ${med1Dose} mg; take with Iftar.\n`
+              : `• تراجينتا (ليناجليبتين): احتفظ بالجرعة الحالية (${med1Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Januvia")) {
+            advice += (currentLang === 'en')
+              ? `• Januvia (Sitagliptin): Maintain your current dose of ${med1Dose} mg; take with Iftar.\n`
+              : `• جانوفيا (سيتاجليبتين): احتفظ بالجرعة الحالية (${med1Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Saxagliptin")) {
+            advice += (currentLang === 'en')
+              ? `• Saxagliptin: Continue your current dose of ${med1Dose} mg; take with Iftar.\n`
+              : `• ساكساجليبتين: استمر بالجرعة الحالية (${med1Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Gulvus")) {
+            advice += (currentLang === 'en')
+              ? `• Gulvus (Repaglinide): Maintain your current dose of ${med1Dose} mg; take with Iftar.\n`
+              : `• جولفوس (ريباجلينيد): احتفظ بالجرعة الحالية (${med1Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med1.includes("Jardiance")) {
+            advice += (currentLang === 'en')
+              ? `• Jardiance (Empagliflozin): Maintain your current dose of ${med1Dose} mg; ensure adequate hydration.\n`
+              : `• جاردينس (إمباجليفلوزين): احتفظ بالجرعة الحالية (${med1Dose} ملغ)؛ تأكد من الترطيب.\n`;
+          } else if (med1.includes("Dapagliflozin")) {
+            advice += (currentLang === 'en')
+              ? `• Dapagliflozin: Continue your current dose of ${med1Dose} mg; ensure proper hydration.\n`
+              : `• داباجليفلوزين: استمر بالجرعة الحالية (${med1Dose} ملغ)؛ تأكد من الترطيب.\n`;
+          } else if (med1.includes("Actus")) {
+            advice += (currentLang === 'en')
+              ? `• Actus (Actos): Maintain your current dose of ${med1Dose} mg; take with Iftar.\n`
+              : `• أكتوس (بايوجليتازون): احتفظ بالجرعة الحالية (${med1Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          }
+        }
+        // Medication 2:
+        const med2 = getVal('med2Select');
+        const med2Dose = getNumber('med2Dose');
+        const med2Freq = getNumber('med2Frequency');
+        if (med2 !== "None" && med2Dose > 0 && med2Freq > 0) {
+          if (med2.includes("Glucophage")) {
+            advice += (currentLang === 'en')
+              ? `• Glucophage (Metformin): Continue your dose of ${med2Dose} mg, taken with Iftar.\n`
+              : `• غلوكوفاج (ميتفورمين): استمر بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Glucophage XR")) {
+            advice += (currentLang === 'en')
+              ? `• Glucophage XR (Metformin XR): Continue your dose of ${med2Dose} mg, taken with Iftar.\n`
+              : `• غلوكوفاج إكس آر (ميتفورمين ممتد): استمر بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Diamicron MR")) {
+            advice += (currentLang === 'en')
+              ? `• Diamicron MR: Continue your regimen of ${med2Dose} mg, taken with Iftar.\n`
+              : `• دياميكـرون إم آر: استمر بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Amayl")) {
+            const newMed2Dose = Math.round(med2Dose * adjustmentFactorSulfonylurea);
+            advice += (currentLang === 'en')
+              ? `• Amayl (Glimepiride): Reduce dose from ${med2Dose} mg to ${newMed2Dose} mg; take with Iftar.\n`
+              : `• أميـيل (جليميبيريد): قلل الجرعة من ${med2Dose} ملغ إلى ${newMed2Dose} ملغ؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Doanil")) {
+            const newMed2Dose = Math.round(med2Dose * adjustmentFactorSulfonylurea);
+            advice += (currentLang === 'en')
+              ? `• Doanil (Glibenclamide): Reduce dose from ${med2Dose} mg to ${newMed2Dose} mg; take with Iftar.\n`
+              : `• داونيل (غليبينكلاميد): قلل الجرعة من ${med2Dose} ملغ إلى ${newMed2Dose} ملغ؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Trajenta")) {
+            advice += (currentLang === 'en')
+              ? `• Trajenta (Linagliptin): Maintain your current dose of ${med2Dose} mg; take with Iftar.\n`
+              : `• تراجينتا (ليناجليبتين): احتفظ بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Januvia")) {
+            advice += (currentLang === 'en')
+              ? `• Januvia (Sitagliptin): Maintain your current dose of ${med2Dose} mg; take with Iftar.\n`
+              : `• جانوفيا (سيتاجليبتين): احتفظ بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Saxagliptin")) {
+            advice += (currentLang === 'en')
+              ? `• Saxagliptin: Continue your current dose of ${med2Dose} mg; take with Iftar.\n`
+              : `• ساكساجليبتين: استمر بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Gulvus")) {
+            advice += (currentLang === 'en')
+              ? `• Gulvus (Repaglinide): Maintain your current dose of ${med2Dose} mg; take with Iftar.\n`
+              : `• جولفوس (ريباجلينيد): احتفظ بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med2.includes("Jardiance")) {
+            advice += (currentLang === 'en')
+              ? `• Jardiance (Empagliflozin): Maintain your current dose of ${med2Dose} mg; ensure proper hydration.\n`
+              : `• جاردينس (إمباجليفلوزين): احتفظ بالجرعة الحالية (${med2Dose} ملغ)؛ تأكد من الترطيب.\n`;
+          } else if (med2.includes("Dapagliflozin")) {
+            advice += (currentLang === 'en')
+              ? `• Dapagliflozin: Continue your current dose of ${med2Dose} mg; ensure proper hydration.\n`
+              : `• داباجليفلوزين: استمر بالجرعة الحالية (${med2Dose} ملغ)؛ تأكد من الترطيب.\n`;
+          } else if (med2.includes("Actus")) {
+            advice += (currentLang === 'en')
+              ? `• Actus (Actos): Maintain your current dose of ${med2Dose} mg; take with Iftar.\n`
+              : `• أكتوس (بايوجليتازون): احتفظ بالجرعة الحالية (${med2Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          }
+        }
+        // Medication 3:
+        const med3 = getVal('med3Select');
+        const med3Dose = getNumber('med3Dose');
+        const med3Freq = getNumber('med3Frequency');
+        if (med3 !== "None" && med3Dose > 0 && med3Freq > 0) {
+          if (med3.includes("Glucophage")) {
+            advice += (currentLang === 'en')
+              ? `• Glucophage (Metformin): Continue your dose of ${med3Dose} mg, taken with Iftar.\n`
+              : `• غلوكوفاج (ميتفورمين): استمر بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Glucophage XR")) {
+            advice += (currentLang === 'en')
+              ? `• Glucophage XR (Metformin XR): Continue your dose of ${med3Dose} mg, taken with Iftar.\n`
+              : `• غلوكوفاج إكس آر (ميتفورمين ممتد): استمر بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Diamicron MR")) {
+            advice += (currentLang === 'en')
+              ? `• Diamicron MR: Continue your dose of ${med3Dose} mg, taken with Iftar.\n`
+              : `• دياميكـرون إم آر: استمر بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Amayl")) {
+            const newMed3Dose = Math.round(med3Dose * adjustmentFactorSulfonylurea);
+            advice += (currentLang === 'en')
+              ? `• Amayl (Glimepiride): Reduce dose from ${med3Dose} mg to ${newMed3Dose} mg; take with Iftar.\n`
+              : `• أميـيل (جليميبيريد): قلل الجرعة من ${med3Dose} ملغ إلى ${newMed3Dose} ملغ؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Doanil")) {
+            const newMed3Dose = Math.round(med3Dose * adjustmentFactorSulfonylurea);
+            advice += (currentLang === 'en')
+              ? `• Doanil (Glibenclamide): Reduce dose from ${med3Dose} mg to ${newMed3Dose} mg; take with Iftar.\n`
+              : `• داونيل (غليبينكلاميد): قلل الجرعة من ${med3Dose} ملغ إلى ${newMed3Dose} ملغ؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Trajenta")) {
+            advice += (currentLang === 'en')
+              ? `• Trajenta (Linagliptin): Maintain your current dose of ${med3Dose} mg; take with Iftar.\n`
+              : `• تراجينتا (ليناجليبتين): احتفظ بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Januvia")) {
+            advice += (currentLang === 'en')
+              ? `• Januvia (Sitagliptin): Maintain your current dose of ${med3Dose} mg; take with Iftar.\n`
+              : `• جانوفيا (سيتاجليبتين): احتفظ بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Saxagliptin")) {
+            advice += (currentLang === 'en')
+              ? `• Saxagliptin: Continue your current dose of ${med3Dose} mg; take with Iftar.\n`
+              : `• ساكساجليبتين: استمر بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Gulvus")) {
+            advice += (currentLang === 'en')
+              ? `• Gulvus (Repaglinide): Maintain your current dose of ${med3Dose} mg; take with Iftar.\n`
+              : `• جولفوس (ريباجلينيد): احتفظ بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          } else if (med3.includes("Jardiance")) {
+            advice += (currentLang === 'en')
+              ? `• Jardiance (Empagliflozin): Maintain your current dose of ${med3Dose} mg; ensure proper hydration.\n`
+              : `• جاردينس (إمباجليفلوزين): احتفظ بالجرعة الحالية (${med3Dose} ملغ)؛ تأكد من الترطيب.\n`;
+          } else if (med3.includes("Dapagliflozin")) {
+            advice += (currentLang === 'en')
+              ? `• Dapagliflozin: Continue your current dose of ${med3Dose} mg; ensure proper hydration.\n`
+              : `• داباجليفلوزين: استمر بالجرعة الحالية (${med3Dose} ملغ)؛ تأكد من الترطيب.\n`;
+          } else if (med3.includes("Actus")) {
+            advice += (currentLang === 'en')
+              ? `• Actus (Actos): Maintain your current dose of ${med3Dose} mg; take with Iftar.\n`
+              : `• أكتوس (بايوجليتازون): احتفظ بالجرعة الحالية (${med3Dose} ملغ)؛ يُؤخذ مع الإفطار.\n`;
+          }
+        }
+
+        // --- Diet & Lifestyle Recommendations ---
+        advice += (currentLang === 'en')
+          ? "\nDiet & Lifestyle Recommendations:\n• Follow a balanced diet rich in complex carbohydrates, high fiber, and low glycemic index foods (e.g., whole grains, legumes, vegetables).\n• Maintain adequate hydration during non-fasting hours.\n• Avoid excessive sweets and refined sugars.\n• Engage in light physical activity and regularly monitor your blood glucose levels.\n"
+          : "\nتوصيات النظام الغذائي ونمط الحياة:\n• اتبع نظاماً غذائياً متوازناً غنيًا بالكربوهيدرات المعقدة والألياف والأطعمة منخفضة المؤشر السكري (مثل الحبوب الكاملة، والبقوليات، والخضروات).\n• حافظ على الترطيب الكافي خلال ساعات الإفطار.\n• تجنب الإفراط في تناول الحلويات والسكريات المكررة.\n• مارس نشاطاً بدنياً خفيفاً وافحص سكر الدم بانتظام.\n";
+
+        // --- General Precautions ---
+        advice += (currentLang === 'en')
+          ? "\nPrecautions:\n• Break your fast immediately if you experience hypoglycemia (<70 mg/dL), hyperglycemia (>300 mg/dL), severe dehydration, or symptoms of DKA/HHS.\n• Pre‑Ramadan education and continuous glucose monitoring are strongly recommended.\n• Always consult your physician before and during Ramadan to tailor your regimen.\n"
+          : "\nالاحتياطات:\n• اكسر صيامك فوراً إذا شعرت بأعراض انخفاض السكر (<70 ملغ/ديسيلتر) أو ارتفاعه (>300 ملغ/ديسيلتر) أو الجفاف الشديد أو أعراض الحماض.\n• يُنصح بالتثقيف قبل رمضان ومراقبة سكر الدم المستمرة.\n• راجع طبيبك قبل وأثناء رمضان لتعديل النظام العلاجي حسب حالتك.\n";
+
+        // --- Display the Recommendations Inside the Box ---
+        let resultClass = (riskCategory === "high") ? "high" : (riskCategory === "moderate") ? "moderate" : "low";
+        if (currentLang === 'en') {
+          const resultDiv = document.getElementById('individualizedResult');
+          resultDiv.className = "result " + resultClass;
+          resultDiv.innerText = alerts + advice;
+        } else {
+          const resultDiv = document.getElementById('individualizedResult_ar');
+          resultDiv.className = "result " + resultClass;
+          resultDiv.innerText = alerts + advice;
+        }
+      };
+    };
+  </script>
+
+
+</body></html>
